@@ -1,6 +1,6 @@
 /*
 Beykoz University - Computer Enginerring
-Name: Mert Altuntaþ
+Name: Mert AltuntaÅŸ
 ID : 1804010005
 */
 
@@ -49,16 +49,22 @@ void bill_management ()
 //--------------------------------------------------------------------------------------------------------------------------
 void payment_methods ()
 {
+				system ("cls");
 		        printf("\n=============================================================\n");
-                printf("\n\n\t\tPAYMENT METHODS AND DISCOUNTS");
-                printf("\n\n\t1. ");
-                printf("\n\t2. ");
-                printf("\n\t3. ");
-                printf("\n\t4. ");
-                printf("\n\t5. ");
-                printf("\n\t6. ");
-                printf("\n\t7. ");
+                printf("\n\n\t\tPAYMENT METHODS AND DISCOUNTS\n\n");
+                printf("\n\t- Fitness / Normal Membership : 1 Mounth (5 days a week)- 20$");
+                printf("\n\t- Fitness / Normal Membership : 1 Mounth (3 days a week)- 15$");
+                printf("\n\t- Fitness / Student Discount : 1 Mounth (3 days a week)- 10$\n");
+                printf("\n\t- Swimming / Normal Membership : 1 Mounth (5 days a week)- 25$");
+                printf("\n\t- Swimming / Normal Membership : 1 Mounth (3 days a week)- 20$");
+                printf("\n\t- Swimming / Student Discount : 1 Mounth (3 days a week)- 15$\n");
+                printf("\n\t- Fitness + Swimming / Normal Membership : 1 Mounth (5 days a week)- 40$");
+                printf("\n\t- Fitness + Swimming / Normal Membership : 1 Mounth (3 days a week)- 30$");
+                printf("\n\t- Fitness + Swimming / Student Discount : 1 Mounth (3 days a week)- 20$");
                 printf("\n\n=============================================================\n\n");
+    getch();
+	system ("cls");
+    main ();
 }
 //--------------------------------------------------------------------------------------------------------------------------
 void bmi_calculation ()
@@ -118,7 +124,7 @@ int main ()
                 printf("\n\t7. EXIT");
                 printf("\n\n=============================================================\n\n");
 
-                printf("\n\n\tENTER YOUR CHOICE:");
+                printf("\n\n\tENTER YOUR CHOICE:\t");
                 scanf("%d", & rakam);
     switch(rakam)
 	{
@@ -151,4 +157,3 @@ int main ()
 	}
 
 }
-
