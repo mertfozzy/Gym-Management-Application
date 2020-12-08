@@ -35,7 +35,7 @@ void new_member ()
 	
 	printf ("\nEnter Name : \t");
 	scanf("%s", isim);
-	printf ("\nEnter Surname : \t");
+	printf ("\nEnter Surname :\t");
 	scanf("%s", soyisim);
 	printf ("\nEnter Branch : \t");
 	scanf("%s", branch);
@@ -44,7 +44,9 @@ void new_member ()
     f = fopen("MemberList.txt" , "w");
     fprintf(f, "%s\t%s\t : %s\n", isim, soyisim, branch);
     fclose(f);
-  
+    
+    printf ("\n\nMember recorded to the database successfully.");
+  	printf ("\nPress any key to return to the main menu.");
 	
 	getch();
 	system ("cls");
@@ -119,7 +121,7 @@ void bmi_calculation ()
 		printf ("The result is : %.2f\n\n", bmi);
 	}
 	
-	printf ("Press any key to go main menu..\n");
+	printf ("Press any key to return to the main menu.\n");
 	
 	getch();
 	system ("cls");
