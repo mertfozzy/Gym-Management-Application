@@ -29,7 +29,26 @@ void intro_ekrani(){
 //--------------------------------------------------------------------------------------------------------------------------
 void new_member ()
 {
+	system ("cls");
 	
+	char isim[10], soyisim[10], branch[20];
+	
+	printf ("\nEnter Name : \t");
+	scanf("%s", isim);
+	printf ("\nEnter Surname : \t");
+	scanf("%s", soyisim);
+	printf ("\nEnter Branch : \t");
+	scanf("%s", branch);
+	
+	FILE * f, * f2;
+    f = fopen("MemberList.txt" , "w");
+    fprintf(f, "%s\t%s\t : %s\n", isim, soyisim, branch);
+    fclose(f);
+  
+	
+	getch();
+	system ("cls");
+    main ();
 }
 //--------------------------------------------------------------------------------------------------------------------------
 void member_management()
@@ -49,7 +68,7 @@ void bill_management ()
 //--------------------------------------------------------------------------------------------------------------------------
 void payment_methods ()
 {
-				system ("cls");
+	system ("cls");
 		        printf("\n=============================================================\n");
                 printf("\n\n\t\tPAYMENT METHODS AND DISCOUNTS\n\n");
                 printf("\n\t- Fitness / Normal Membership : 1 Mounth (5 days a week)- 20$");
@@ -58,9 +77,9 @@ void payment_methods ()
                 printf("\n\t- Swimming / Normal Membership : 1 Mounth (5 days a week)- 25$");
                 printf("\n\t- Swimming / Normal Membership : 1 Mounth (3 days a week)- 20$");
                 printf("\n\t- Swimming / Student Discount : 1 Mounth (3 days a week)- 15$\n");
-                printf("\n\t- Fitness + Swimming / Normal Membership : 1 Mounth (5 days a week)- 40$");
-                printf("\n\t- Fitness + Swimming / Normal Membership : 1 Mounth (3 days a week)- 30$");
-                printf("\n\t- Fitness + Swimming / Student Discount : 1 Mounth (3 days a week)- 20$");
+                printf("\n\t- Fitness and Swimming / Normal Membership : 1 Mounth (5 days a week)- 40$");
+                printf("\n\t- Fitness and Swimming / Normal Membership : 1 Mounth (3 days a week)- 30$");
+                printf("\n\t- Fitness and Swimming / Student Discount : 1 Mounth (3 days a week)- 20$");
                 printf("\n\n=============================================================\n\n");
     getch();
 	system ("cls");
@@ -117,7 +136,7 @@ int main ()
                 printf("\n\n\t\tWELCOME TO GYM MANAGEMENT SOFTWARE");
                 printf("\n\n\t1. CREATE A NEW MEMBER");
                 printf("\n\t2. MEMBER MANAGEMENT (requires admin login)");
-                printf("\n\t3. VIEW SCHEDULE BY MEMBER NAME");
+                printf("\n\t3. VIEW PERSONAL SCHEDULE BY MEMBER NAME");
                 printf("\n\t4. CHECK THE BILLS BY MEMBER NAME");
                 printf("\n\t5. REVIEW PAYMENT METHODS & DISCOUNTS");
                 printf("\n\t6. MAKE A BMI CALCULATION");
