@@ -2,6 +2,10 @@
 Beykoz University - Computer Enginerring
 Name: Mert Altuntaş
 ID : 1804010005
+
+For Login System;
+username = "Mert"
+password = "1234"
 */
 
 #include <stdio.h>
@@ -186,6 +190,10 @@ void loginFunction(char username[200], char password[200])
   if (strcmp(username, userName) == 0 && strcmp(password, passWord) == 0) 
   {
     printf("\n\nLogin successful. Press any key to continue.\n");
+    //Access granted ;
+    getch();
+    godMode();
+                
   } 
   else 
   {
@@ -210,6 +218,43 @@ void signupFunction() {
   loginFunction(username, password);
 }
 //--------------------------------------------------------------------------------------------------------------------------
+void godMode()
+{
+	system ("cls");
+	int secim2;
+        	    printf("\n=============================================================\n");
+                printf("\n\n\t\tMEMBER MANAGEMENT");
+                printf("\n\n\tPlease choose what do you want : ");
+                printf("\n\t1.Delete a member.");
+                printf("\n\t2.View list of all members.");
+                printf("\n\n=============================================================\n\n");
+                
+                printf("\n\n\tENTER YOUR CHOICE:\t");
+                scanf("%d", &secim2);
+                
+                switch (secim2)
+                {
+                	case 1: delete_member();
+                	break;
+                	
+                	case 2: 
+                	break;
+					
+					default :
+					printf ("\nWrong choice. Please try again.\n");
+					break;	
+				}
+}
+//--------------------------------------------------------------------------------------------------------------------------
+void delete_member(struct node **p)  //deletes based on member surname
+{
+ 
+    getch();
+    system("cls");
+}
+
+//--------------------------------------------------------------------------------------------------------------------------
+
 void schedule ()
 {
 	
