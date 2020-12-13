@@ -142,7 +142,72 @@ system ("cls");
 //--------------------------------------------------------------------------------------------------------------------------
 void member_management()
 {
-	
+	system ("cls");
+    int secim;
+    char username[200] = "Mert";
+    char password[200] = "1234";
+    
+    	        printf("\n=============================================================\n");
+                printf("\n\n\t\tADMINISTRATIVE LOGIN PAGE");
+                printf("\n\n\t1.Login to system with username and password.");
+                printf("\n\t2.Sign-up to system.");
+                printf("\n\n=============================================================\n\n");
+
+                printf("\n\n\tENTER YOUR CHOICE:\t");
+                scanf("%d", &secim);
+                
+                switch (secim)
+                {
+                	case 1: loginFunction(username, password);
+                	break;
+                	
+                	case 2: signupFunction();
+                	break;
+					
+					default :
+					printf ("\nWrong choice. Please try again.\n");
+					break;	
+				}
+    
+}
+//--------------------------------------------------------------------------------------------------------------------------
+void loginFunction(char username[200], char password[200])
+{
+	system ("cls");
+	char userName[200];
+  	char passWord[200];
+  	
+	tekrar:
+    printf("\nPlease enter username: \n");
+  	scanf("%s", &userName);
+ 	printf("Please enter numeric password : \n");
+  	scanf("%s", &passWord);
+
+  if (strcmp(username, userName) == 0 && strcmp(password, passWord) == 0) 
+  {
+    printf("\n\nLogin successful. Press any key to continue.\n");
+  } 
+  else 
+  {
+    printf("\n\nWrong username or password.\nPlease try again or sign up.\n");
+    goto tekrar;
+
+  }
+}
+//--------------------------------------------------------------------------------------------------------------------------
+void signupFunction() {
+  char username[200];
+  char password[200];
+  system ("cls");
+  
+  printf("\nChoose an username : \n");
+  scanf("%s", & username);
+  printf("Choose a numeric password : \n"),
+  scanf("%s", & password);
+
+  printf("\n ***Your account ready to use. Please go back.*** \n");
+
+  loginFunction(username, password);
 }
 //--------------------------------------------------------------------------------------------------------------------------
 void schedule ()
