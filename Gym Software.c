@@ -184,7 +184,7 @@ void bmi_calculation ()
 	printf ("\nPlease enter weight (kg): \n");
 	scanf ("%f", &weight);
 	
-	printf ("Please enter height (m): \n");
+	printf ("Please enter height (dot m): \n");
 	scanf ("%f", &height);
 	
 	bmi = weight / (height*height);
