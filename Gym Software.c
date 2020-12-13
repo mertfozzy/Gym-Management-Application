@@ -7,6 +7,21 @@ ID : 1804010005
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
+#include<string.h>
+
+struct node
+{
+  FILE* fp;
+  struct node* next;
+  struct rec* data;
+};
+
+//node data strcture
+struct rec
+{
+    char isim[30], soyisim[30], branch[20];
+
+};
 
 //--------------------------------------------------------INTRO------------------------------------------------------------------
 void intro_ekrani(){
@@ -22,32 +37,106 @@ void intro_ekrani(){
   int j, a;
   for (a = 0; a <= 5; a++) {
     printf(".");
-    for (j = 0; j <= 380000000; j++);
+    for (j = 0; j <= 120000000; j++);
   }
   system("cls");
 }
 //--------------------------------------------------------------------------------------------------------------------------
-void new_member ()
+void new_member(struct node **p)
 {
-	system ("cls");
-	
-	char isim[10], soyisim[10], branch[20];
-	
-	printf ("\nEnter Name : \t");
-	scanf("%s", isim);
-	printf ("\nEnter Surname :\t");
-	scanf("%s", soyisim);
-	printf ("\nEnter Branch : \t");
-	scanf("%s", branch);
-	
-	FILE * f, * f2;
-    f = fopen("MemberList.txt" , "w");
-    fprintf(f, "%s\t%s\t : %s\n", isim, soyisim, branch);
-    fclose(f);
-    
-    printf ("\n\nMember recorded to the database successfully.");
-  	printf ("\nPress any key to return to the main menu.");
-	
+system ("cls");
+ if(*p==NULL)
+    {
+      //adding first entry
+      struct node *record;
+      struct rec *newrec= (struct rec*)malloc(sizeof(struct rec));
+      record=(struct node*)malloc(sizeof(struct node));
+      record->next=NULL;
+
+      printf("\nPlease enter the details:\nEnter Name : \t");
+      scanf("%s",newrec->isim);
+      printf("\nEnter Surname : ");
+      scanf("%s",newrec->soyisim);
+      printf ("\nEnter Branch : \t");
+      scanf("%s",newrec->branch);
+
+
+
+      record->data=newrec;
+      strcat(record->data->soyisim,".txt");
+
+      record->fp=fopen(record->data->soyisim,"a+");
+
+      //ADDING TO MOTHER file
+      FILE *f= fopen("mother.txt","a");
+      char filename[30]="";
+      strcat(filename,(record->data->soyisim));
+      strcat(filename,"\n");
+      fputs(filename, f);
+      fclose(f);
+
+
+      FILE *file= fopen(record->data->soyisim,"wb+");
+      fwrite(newrec,sizeof(struct rec), 1,file);
+      rewind(file);
+      struct rec getrec; //to get structure from file and print
+
+      fread(&getrec,sizeof(struct rec), 1,file);
+
+      printf("\nRecord name and surname: %s %s\nRecorded branch: %s",getrec.isim, getrec.soyisim, getrec.branch);
+
+      if(record->fp==NULL)
+      {
+        printf("\nSYSTEM ERROR.");
+        printf("\nPRESS ANY KEY TO EXIT");
+        return ;
+      }
+      else{
+         printf("\nRECORD ADDED SUCCESSFULLY\n\n");
+      }
+
+      *p=record;  //head of the queue is created
+      fclose(file);
+      fclose(record->fp);
+    }
+    else
+    {
+        struct node *record;
+        struct rec *newrec= (struct rec*)malloc(sizeof(struct rec));
+        record=(struct node*)malloc(sizeof(struct node));
+
+        record->next=NULL;
+        record->fp=NULL;
+        record->data=NULL;
+
+        printf("\nPlease enter the details:\nEnter surname : \t");
+        scanf("%s",newrec->soyisim);
+
+        strcat(newrec->soyisim,".txt");
+
+        //ADDING TO MOTHER file
+        FILE *f= fopen("mother.txt", "a");
+        char filename[20]="";
+        strcat(filename, newrec->soyisim);
+        strcat(filename, "\n");
+        fputs(filename, f);
+        fclose(f);
+
+        printf("\nEnter Branch : \t");
+        scanf("%s",newrec->branch);
+
+        record->data=newrec;
+
+        record->fp=fopen(record->data->soyisim,"w+");
+        printf("\nFile created");
+        FILE *file= fopen(record->data->soyisim,"wb+");
+        fwrite(newrec,sizeof(struct rec), 1,file);
+        rewind(file);
+        fclose(file);
+    }
+
+
+  
 	getch();
 	system ("cls");
     main ();
@@ -131,8 +220,11 @@ void bmi_calculation ()
 //--------------------------------------------------------MAIN-------------------------------------------------------------------
 int main ()
 {
-				intro_ekrani();
-				
+	intro_ekrani();
+	struct node *p=NULL;
+  	FILE *fp= fopen("mother.txt","r");   //stores all names of files (tasks)
+
+  
 				int rakam;
 	            printf("\n=============================================================\n");
                 printf("\n\n\t\tWELCOME TO GYM MANAGEMENT SOFTWARE");
@@ -150,7 +242,7 @@ int main ()
     switch(rakam)
 	{
 	
-	case 1 : new_member();
+	case 1 : new_member(&p);
 	break;
 	
 	case 2 : member_management();
