@@ -7,7 +7,7 @@ ID : 1804010005
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
-#include<string.h>
+#include <string.h>
 
 struct node
 {
@@ -60,8 +60,6 @@ system ("cls");
       printf ("\nEnter Branch : \t");
       scanf("%s",newrec->branch);
 
-
-
       record->data=newrec;
       strcat(record->data->soyisim,".txt");
 
@@ -79,7 +77,7 @@ system ("cls");
       FILE *file= fopen(record->data->soyisim,"wb+");
       fwrite(newrec,sizeof(struct rec), 1,file);
       rewind(file);
-      struct rec getrec; //to get structure from file and print
+      struct rec getrec; 
 
       fread(&getrec,sizeof(struct rec), 1,file);
 
@@ -95,7 +93,7 @@ system ("cls");
          printf("\nRECORD ADDED SUCCESSFULLY\n\n");
       }
 
-      *p=record;  //head of the queue is created
+      *p=record;  
       fclose(file);
       fclose(record->fp);
     }
