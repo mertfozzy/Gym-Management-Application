@@ -237,7 +237,7 @@ void godMode()
                 	case 1: delete_member();
                 	break;
                 	
-                	case 2: 
+                	case 2: list_member();
                 	break;
 					
 					default :
@@ -253,6 +253,13 @@ void delete_member(struct node **p)  //deletes based on member surname
     system("cls");
 }
 
+//--------------------------------------------------------------------------------------------------------------------------
+void list_member()  //deletes based on member surname
+{
+ 
+    getch();
+    system("cls");
+}
 //--------------------------------------------------------------------------------------------------------------------------
 
 void schedule ()
