@@ -53,7 +53,7 @@ system ("cls");
       record=(struct node*)malloc(sizeof(struct node));
       record->next=NULL;
 
-      printf("\nPlease enter the details:\nEnter Name : \t");
+      printf("\nPlease enter the details:\n\nEnter Name : \t");
       scanf("%s",newrec->isim);
       printf("\nEnter Surname : ");
       scanf("%s",newrec->soyisim);
@@ -81,7 +81,7 @@ system ("cls");
 
       fread(&getrec,sizeof(struct rec), 1,file);
 
-      printf("\nRecord name and surname: %s %s\nRecorded branch: %s",getrec.isim, getrec.soyisim, getrec.branch);
+      printf("\n\nRecord name and surname: %s %s\nRecorded branch: %s",getrec.isim, getrec.soyisim, getrec.branch);
 
       if(record->fp==NULL)
       {
@@ -90,7 +90,7 @@ system ("cls");
         return ;
       }
       else{
-         printf("\nRECORD ADDED SUCCESSFULLY\n\n");
+        printf ("\n\nMember recorded to the database successfully.\n");
       }
 
       *p=record;  
@@ -126,7 +126,7 @@ system ("cls");
         record->data=newrec;
 
         record->fp=fopen(record->data->soyisim,"w+");
-        printf("\nFile created");
+        printf ("\n\nMember recorded to the database successfully.");
         FILE *file= fopen(record->data->soyisim,"wb+");
         fwrite(newrec,sizeof(struct rec), 1,file);
         rewind(file);
@@ -134,7 +134,7 @@ system ("cls");
     }
 
 
-  
+  	printf ("\nPress any key to return to the main menu.");
 	getch();
 	system ("cls");
     main ();
