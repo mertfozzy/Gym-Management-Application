@@ -2,7 +2,6 @@
 Beykoz University - Computer Enginerring
 Name: Mert Altuntaş
 ID : 1804010005
-
 For Login System;
 username = "Mert"
 password = "1234"
@@ -64,7 +63,7 @@ system ("cls");
 
 	FILE * f;
     f = fopen("MemberList.txt" , "a");
-    fprintf(f, "%s %s : %s : Option %s\n", isim, soyisim, branch, paymentMethod);
+    fprintf(f, "%s %s : %s  Option %s\n", isim, soyisim, branch, paymentMethod);
     fclose(f);
   	printf ("\nPress any key to return to the main menu.");
 	getch();
@@ -120,6 +119,7 @@ void loginFunction(char username[200], char password[200])
     			printf("\n\nLogin successful. Press any key to continue.\n");
     			//Access granted ;
     			getch();
+    			x:
     			system ("cls");
     			int secim2;
     			
@@ -132,6 +132,36 @@ void loginFunction(char username[200], char password[200])
                 
                 printf("\n\n\tENTER YOUR CHOICE:\t");
                 scanf("%d", &secim2);      
+                
+                
+                if(secim2==2)
+                {
+                	system ("cls");
+                	FILE * dosya;
+                	char isimler [500][30], soyisimler [500][30], branchs[500][30], options[500][10];
+                	int i=0;
+   					dosya = fopen("MemberList.txt" , "r");
+   					
+   					if(dosya!=NULL)
+					{
+						while(!feof(dosya))
+						{
+							fscanf(dosya,"%s %s %s %s",&isimler[i], &soyisimler[i], &branchs[i] ,&options[i]);
+							printf("%s %s %s %s\n",isimler[i], soyisimler[i], branchs[i], options[i]);
+						}
+					}
+   					else
+   					{
+   						printf("\nFile does not exist. Try Again.");
+   						goto x;
+					}
+   					fclose(dosya);
+   					
+  					printf ("\nPress any key to return to the main menu.");
+					getch();
+					system ("cls");
+    				main ();
+				}
                 
   } 
   
