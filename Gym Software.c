@@ -37,20 +37,35 @@ void new_member()
 {
 system ("cls");
  
-	char isim[30], soyisim[30], branch[30];
+	char isim[30], soyisim[30], branch[30], paymentMethod[5];
 
 	printf ("\nEnter Name : \t");
 	scanf("%s", isim);
 	printf ("\nEnter Surname : ");
 	scanf("%s", soyisim);
-	printf ("\nEnter Branch : \t");
+	printf ("\nEnter Main Branch : ");
 	scanf("%s", branch);
+	printf ("\n\nChoose a payment method : ");
+			    printf("\n=============================================================\n");
+                printf("\n\n\t\tPAYMENT METHODS AND DISCOUNTS\n\n");
+                printf("\n\tA- Fitness / Normal Membership : 1 Mounth (5 days a week)- 20$");
+                printf("\n\tB- Fitness / Normal Membership : 1 Mounth (3 days a week)- 15$");
+                printf("\n\tC- Fitness / Student Discount : 1 Mounth (3 days a week)- 10$\n");
+                printf("\n\tD- Swimming / Normal Membership : 1 Mounth (5 days a week)- 25$");
+                printf("\n\tE- Swimming / Normal Membership : 1 Mounth (3 days a week)- 20$");
+                printf("\n\tF- Swimming / Student Discount : 1 Mounth (3 days a week)- 15$\n");
+                printf("\n\tG- Fitness and Swimming / Normal Membership : 1 Mounth (5 days a week)- 40$");
+                printf("\n\tH- Fitness and Swimming / Normal Membership : 1 Mounth (3 days a week)- 30$");
+                printf("\n\tI- Fitness and Swimming / Student Discount : 1 Mounth (3 days a week)- 20$");
+                printf("\n\n=============================================================\n\n");
+    printf("Enter the choice with Letter : \t");            
+	scanf("%s", paymentMethod);
+
 
 	FILE * f;
     f = fopen("MemberList.txt" , "a");
-    fprintf(f, "%s %s : %s\n", isim, soyisim, branch);
+    fprintf(f, "%s %s : %s : Option %s\n", isim, soyisim, branch, paymentMethod);
     fclose(f);
-
   	printf ("\nPress any key to return to the main menu.");
 	getch();
 	system ("cls");
@@ -102,12 +117,24 @@ void loginFunction(char username[200], char password[200])
 
   if (strcmp(username, userName) == 0 && strcmp(password, passWord) == 0) 
   {
-    printf("\n\nLogin successful. Press any key to continue.\n");
-    //Access granted ;
-    getch();
-    godMode();
+    			printf("\n\nLogin successful. Press any key to continue.\n");
+    			//Access granted ;
+    			getch();
+    			system ("cls");
+    			int secim2;
+    			
+        	    printf("\n=============================================================\n");
+                printf("\n\n\t\tMEMBER MANAGEMENT");
+                printf("\n\n\tPlease choose what do you want : ");
+                printf("\n\t1.Delete a member.");
+                printf("\n\t2.View list of all members.");
+                printf("\n\n=============================================================\n\n");
+                
+                printf("\n\n\tENTER YOUR CHOICE:\t");
+                scanf("%d", &secim2);      
                 
   } 
+  
   else 
   {
     printf("\n\nWrong username or password.\nPlease try again or sign up.\n");
@@ -131,24 +158,8 @@ void signupFunction() {
   loginFunction(username, password);
 }
 //--------------------------------------------------------------------------------------------------------------------------
-void godMode()
-{
-	system ("cls");
-	int secim2;
-        	    printf("\n=============================================================\n");
-                printf("\n\n\t\tMEMBER MANAGEMENT");
-                printf("\n\n\tPlease choose what do you want : ");
-                printf("\n\t1.Delete a member.");
-                printf("\n\t2.View list of all members.");
-                printf("\n\n=============================================================\n\n");
-                
-                printf("\n\n\tENTER YOUR CHOICE:\t");
-                scanf("%d", &secim2);
-               
-               
-}
-//--------------------------------------------------------------------------------------------------------------------------
 
+//--------------------------------------------------------------------------------------------------------------------------
 void schedule ()
 {
 	
@@ -164,15 +175,15 @@ void payment_methods ()
 	system ("cls");
 		        printf("\n=============================================================\n");
                 printf("\n\n\t\tPAYMENT METHODS AND DISCOUNTS\n\n");
-                printf("\n\t- Fitness / Normal Membership : 1 Mounth (5 days a week)- 20$");
-                printf("\n\t- Fitness / Normal Membership : 1 Mounth (3 days a week)- 15$");
-                printf("\n\t- Fitness / Student Discount : 1 Mounth (3 days a week)- 10$\n");
-                printf("\n\t- Swimming / Normal Membership : 1 Mounth (5 days a week)- 25$");
-                printf("\n\t- Swimming / Normal Membership : 1 Mounth (3 days a week)- 20$");
-                printf("\n\t- Swimming / Student Discount : 1 Mounth (3 days a week)- 15$\n");
-                printf("\n\t- Fitness and Swimming / Normal Membership : 1 Mounth (5 days a week)- 40$");
-                printf("\n\t- Fitness and Swimming / Normal Membership : 1 Mounth (3 days a week)- 30$");
-                printf("\n\t- Fitness and Swimming / Student Discount : 1 Mounth (3 days a week)- 20$");
+                printf("\n\tA- Fitness / Normal Membership : 1 Mounth (5 days a week)- 20$");
+                printf("\n\tB- Fitness / Normal Membership : 1 Mounth (3 days a week)- 15$");
+                printf("\n\tC- Fitness / Student Discount : 1 Mounth (3 days a week)- 10$\n");
+                printf("\n\tD- Swimming / Normal Membership : 1 Mounth (5 days a week)- 25$");
+                printf("\n\tE- Swimming / Normal Membership : 1 Mounth (3 days a week)- 20$");
+                printf("\n\tF- Swimming / Student Discount : 1 Mounth (3 days a week)- 15$\n");
+                printf("\n\tG- Fitness and Swimming / Normal Membership : 1 Mounth (5 days a week)- 40$");
+                printf("\n\tH- Fitness and Swimming / Normal Membership : 1 Mounth (3 days a week)- 30$");
+                printf("\n\tI- Fitness and Swimming / Student Discount : 1 Mounth (3 days a week)- 20$");
                 printf("\n\n=============================================================\n\n");
     getch();
 	system ("cls");
