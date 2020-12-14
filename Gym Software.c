@@ -109,9 +109,9 @@ void loginFunction(char username[200], char password[200])
   	char passWord[200];
   	
 	tekrar:
-    printf("\nPlease enter username: \n");
+    printf("\nPlease enter username: \t");
   	scanf("%s", &userName);
- 	printf("Please enter numeric password : \n");
+ 	printf("\nPlease enter numeric password : ");
   	scanf("%s", &passWord);
 
   if (strcmp(username, userName) == 0 && strcmp(password, passWord) == 0) 
