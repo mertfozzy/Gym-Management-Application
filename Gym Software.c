@@ -134,7 +134,7 @@ void loginFunction(char username[200], char password[200])
                 scanf("%d", &secim2);      
                 
                 
-                if(secim2==2)
+                if(secim2==2) //displaying members.txt on screen
                 {
                 	system ("cls");
                 	FILE * dosya;
@@ -143,13 +143,29 @@ void loginFunction(char username[200], char password[200])
    					
    					if(dosya!=NULL)
 					{
-						character=fgetc(dosya);
+						character=fgetc(dosya); 
 						while(character!=EOF)
 						{
 							printf("%c", character);
 							character=fgetc(dosya);
 						}
 					}
+					/* actually i wanted to use this method but its not seen good :(
+					system ("cls");
+                	FILE * dosya;
+                	char isimler [500][30], soyisimler [500][30], branchs[500][30], options[500][10];
+                	int i=0;
+   					dosya = fopen("MemberList.txt" , "r");
+   					
+   					if(dosya!=NULL)
+					{
+						while(!feof(dosya))
+						{
+							fscanf(dosya,"%s %s %s %s",&isimler[i], &soyisimler[i], &branchs[i] ,&options[i]);
+							printf("%s %s : %s - Option %s\n",isimler[i], soyisimler[i], branchs[i], options[i]);
+						}
+					}
+					*/
    					else
    					{
    						printf("\nFile does not exist. Try Again.");
