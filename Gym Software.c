@@ -138,16 +138,16 @@ void loginFunction(char username[200], char password[200])
                 {
                 	system ("cls");
                 	FILE * dosya;
-                	char isimler [500][30], soyisimler [500][30], branchs[500][30], options[500][10];
-                	int i=0;
+                	char character;
    					dosya = fopen("MemberList.txt" , "r");
    					
    					if(dosya!=NULL)
 					{
-						while(!feof(dosya))
+						character=fgetc(dosya);
+						while(character!=EOF)
 						{
-							fscanf(dosya,"%s %s %s %s",&isimler[i], &soyisimler[i], &branchs[i] ,&options[i]);
-							printf("%s %s %s %s\n",isimler[i], soyisimler[i], branchs[i], options[i]);
+							printf("%c", character);
+							character=fgetc(dosya);
 						}
 					}
    					else
