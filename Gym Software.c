@@ -13,19 +13,6 @@ password = "1234"
 #include <stdlib.h>
 #include <string.h>
 
-struct node
-{
-  FILE* fp;
-  struct node* next;
-  struct rec* data;
-};
-
-//node data strcture
-struct rec
-{
-    char isim[30], soyisim[30], branch[20];
-
-};
 
 //--------------------------------------------------------INTRO------------------------------------------------------------------
 void intro_ekrani(){
@@ -46,97 +33,23 @@ void intro_ekrani(){
   system("cls");
 }
 //--------------------------------------------------------------------------------------------------------------------------
-void new_member(struct node **p)
+void new_member()
 {
 system ("cls");
- if(*p==NULL)
-    {
-      //adding first entry
-      struct node *record;
-      struct rec *newrec= (struct rec*)malloc(sizeof(struct rec));
-      record=(struct node*)malloc(sizeof(struct node));
-      record->next=NULL;
+ 
+	char isim[30], soyisim[30], branch[30];
 
-      printf("\nPlease enter the details:\n\nEnter Name : \t");
-      scanf("%s",newrec->isim);
-      printf("\nEnter Surname : ");
-      scanf("%s",newrec->soyisim);
-      printf ("\nEnter Branch : \t");
-      scanf("%s",newrec->branch);
+	printf ("\nEnter Name : \t");
+	scanf("%s", isim);
+	printf ("\nEnter Surname : ");
+	scanf("%s", soyisim);
+	printf ("\nEnter Branch : \t");
+	scanf("%s", branch);
 
-      record->data=newrec;
-      strcat(record->data->soyisim,".txt");
-
-      record->fp=fopen(record->data->soyisim,"a+");
-
-      //ADDING TO MOTHER file
-      FILE *f= fopen("mother.txt","a");
-      char filename[30]="";
-      strcat(filename,(record->data->soyisim));
-      strcat(filename,"\n");
-      fputs(filename, f);
-      fclose(f);
-
-
-      FILE *file= fopen(record->data->soyisim,"wb+");
-      fwrite(newrec,sizeof(struct rec), 1,file);
-      rewind(file);
-      struct rec getrec; 
-
-      fread(&getrec,sizeof(struct rec), 1,file);
-
-      printf("\n\nRecord name and surname: %s %s\nRecorded branch: %s",getrec.isim, getrec.soyisim, getrec.branch);
-
-      if(record->fp==NULL)
-      {
-        printf("\nSYSTEM ERROR.");
-        printf("\nPRESS ANY KEY TO EXIT");
-        return ;
-      }
-      else{
-        printf ("\n\nMember recorded to the database successfully.\n");
-      }
-
-      *p=record;  
-      fclose(file);
-      fclose(record->fp);
-    }
-    else
-    {
-        struct node *record;
-        struct rec *newrec= (struct rec*)malloc(sizeof(struct rec));
-        record=(struct node*)malloc(sizeof(struct node));
-
-        record->next=NULL;
-        record->fp=NULL;
-        record->data=NULL;
-
-        printf("\nPlease enter the details:\nEnter surname : \t");
-        scanf("%s",newrec->soyisim);
-
-        strcat(newrec->soyisim,".txt");
-
-        //ADDING TO MOTHER file
-        FILE *f= fopen("mother.txt", "a");
-        char filename[20]="";
-        strcat(filename, newrec->soyisim);
-        strcat(filename, "\n");
-        fputs(filename, f);
-        fclose(f);
-
-        printf("\nEnter Branch : \t");
-        scanf("%s",newrec->branch);
-
-        record->data=newrec;
-
-        record->fp=fopen(record->data->soyisim,"w+");
-        printf ("\n\nMember recorded to the database successfully.");
-        FILE *file= fopen(record->data->soyisim,"wb+");
-        fwrite(newrec,sizeof(struct rec), 1,file);
-        rewind(file);
-        fclose(file);
-    }
-
+	FILE * f;
+    f = fopen("MemberList.txt" , "a");
+    fprintf(f, "%s %s : %s\n", isim, soyisim, branch);
+    fclose(f);
 
   	printf ("\nPress any key to return to the main menu.");
 	getch();
@@ -231,34 +144,8 @@ void godMode()
                 
                 printf("\n\n\tENTER YOUR CHOICE:\t");
                 scanf("%d", &secim2);
-                
-                switch (secim2)
-                {
-                	case 1: delete_member();
-                	break;
-                	
-                	case 2: list_member();
-                	break;
-					
-					default :
-					printf ("\nWrong choice. Please try again.\n");
-					break;	
-				}
-}
-//--------------------------------------------------------------------------------------------------------------------------
-void delete_member(struct node **p)  //deletes based on member surname
-{
- 
-    getch();
-    system("cls");
-}
-
-//--------------------------------------------------------------------------------------------------------------------------
-void list_member()  //deletes based on member surname
-{
- 
-    getch();
-    system("cls");
+               
+               
 }
 //--------------------------------------------------------------------------------------------------------------------------
 
@@ -357,7 +244,7 @@ int main ()
     switch(rakam)
 	{
 	
-	case 1 : new_member(&p);
+	case 1 : new_member();
 	break;
 	
 	case 2 : member_management();
