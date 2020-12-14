@@ -5,6 +5,8 @@ Mid-Sized C Project : Gym Management Software. It can create new members, and ma
 
 The program requires administrator login for the management panel. Also it includes sign-up option.
 
+It can create file "Memberlist.txt" according to user. You can see an example file in this repo.
+
 That program developed on DevC++ IDE.
 
 Program contains features like bmi calculation, file recording etc.
