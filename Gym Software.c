@@ -385,10 +385,29 @@ void workout ()
     }
 }
 //--------------------------------------------------------------------------------------------------------------------------
-void bill_management ()
+void rules()
 {
-	
+	system ("cls");
+    printf("\t\t________________________________________\n");
+    printf("\n\t\t******* Rules and Regulations *********\n");
+    printf("\t\t________________________________________\n");
+    printf("\n\t1.Do not bring your gym bag or other personal belongings onto the fitness floor.\n");
+    printf("\t2.Refrain from yelling, using profanity, banging weights and making loud sounds\n");
+    printf("\t3.Do not sit on machines between sets\n");
+    printf("\t4.Re-rack weights and return all other equipment and accessories to their proper locations\n");
+    printf("\t5.Ask staff to show you how to operate equipment properly so that others are not waiting as you figure it out.\n");
+    printf("\t6.Wipe down all equipment after use.\n");
+    printf("\t7.Stick to posted time limits on all cardiovascular machines.\n");
+    printf("\t8.Do not bring children onto the gym floor. Children must remain in the childcare area.\n");
+    printf("\t9.Do not disturb others. Focus on your own workout and allow others to do the same.\n");
+    printf("\t10.Before beginning your workout, wash your hands and wipe off any cologne or perfume.\n\n");
+    printf("\n\tPRESS ANY KEY TO BACK MAIN MENU\n");
+    getch();
+	system ("cls");
+    main ();
+
 }
+
 //--------------------------------------------------------------------------------------------------------------------------
 void payment_methods ()
 {
@@ -464,7 +483,7 @@ int main ()
                 printf("\n\n\t1. CREATE A NEW MEMBER");
                 printf("\n\t2. MEMBER MANAGEMENT (requires admin login)");
                 printf("\n\t3. WORKOUT PROGRAM SUGGESTION");
-                printf("\n\t4. CHECK THE BILLS BY MEMBER NAME");
+                printf("\n\t4. RULES AND REGULATIONS");
                 printf("\n\t5. REVIEW PAYMENT METHODS & DISCOUNTS");
                 printf("\n\t6. MAKE A BMI CALCULATION");
                 printf("\n\t7. EXIT");
@@ -484,7 +503,7 @@ int main ()
 	case 3 : workout ();
 	break;	
 	
-	case 4 : bill_management ();
+	case 4 : rules ();
 	break;
 	
 	case 5 : payment_methods ();
@@ -503,3 +522,4 @@ int main ()
 	}
 
 }
+
