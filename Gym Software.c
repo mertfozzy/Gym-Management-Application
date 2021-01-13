@@ -36,7 +36,7 @@ void new_member()
 {
 system ("cls");
  
-	char isim[30], soyisim[30], branch[30], paymentMethod[5];
+	char isim[30], soyisim[30], branch[30], paymentMethod[10];
 
 	printf ("\nEnter Name : \t");
 	scanf("%s", isim);
@@ -60,10 +60,9 @@ system ("cls");
     printf("Enter the choice with Letter : \t");            
 	scanf("%s", paymentMethod);
 
-
 	FILE * f;
     f = fopen("MemberList.txt" , "a");
-    fprintf(f, "%s %s : %s  Option %s\n", isim, soyisim, branch, paymentMethod);
+    fprintf(f, "%s %s %s\n",isim, soyisim, branch);
     fclose(f);
   	printf ("\nPress any key to return to the main menu.");
 	getch();
@@ -178,6 +177,56 @@ void loginFunction(char username[200], char password[200])
 					system ("cls");
     				main ();
 				}
+				
+				
+				else if(secim2==1) //deleting member according to name
+                {
+                	FILE * dosya;
+                	char isimler [30], soyisimler [30], branchs[30], options[10];
+                	 char mem[20],adrs[25], id[30];
+   					 int ag,cono,count=0;
+   					 FILE *fp;
+  					  dosya=fopen("Memberlist.txt","r");
+  					  fp=fopen("NewMemberlist.txt","w");
+  					  printf("\nEnter the name of member: \n");
+   					  getchar();
+ 				      gets(mem);
+
+  				  while(!feof(dosya))
+  				  {
+     				   fscanf(dosya,"%s%s%s",&isimler, &soyisimler, &branchs);
+     				   if(strcmp(isimler,mem)!=0)
+       					 {
+         			  		 fprintf(fp,"%s %s %s\n",isimler, soyisimler, branchs);
+
+       						 }
+        			else  if(strcmp(isimler,mem)==0)
+    				{
+   						 printf("\nDetails of the deleted member is:\n");
+   						 printf("Name : %s\nSurname : %s\nBranch : %s\n",isimler,soyisimler,branchs);
+   					 }
+    				else
+   					 {
+       				 printf("\nPlease enter the correct details\n");
+   					 }
+
+   				 }
+
+	  			fclose(dosya);
+    			fclose(fp);
+			    dosya=fopen("Memberlist.txt","w");
+			    fp=fopen("NewMemberlist.txt","r");
+			    while(!feof(fp))
+   				 {
+        			fscanf(fp,"%s %s %s",&isimler, &soyisimler, &branchs);
+    			    fprintf(dosya,"%s %s %s\n", isimler, soyisimler, branchs);
+   				 }
+ 	 			  fclose(fp);
+   				 fclose(dosya);
+				}
+				getch();
+				system ("cls");
+				main();
                 
   } 
   
@@ -388,9 +437,9 @@ void workout ()
 void rules()
 {
 	system ("cls");
-    printf("\t\t________________________________________\n");
-    printf("\n\t\t******* Rules and Regulations *********\n");
-    printf("\t\t________________________________________\n");
+    printf("\t\t=============================================================\n");
+    printf("\n\t\t                  RULES AND REGULATIONS                 \n");
+    printf("\t\t=============================================================\n");
     printf("\n\t1.Do not bring your gym bag or other personal belongings onto the fitness floor.\n");
     printf("\t2.Refrain from yelling, using profanity, banging weights and making loud sounds\n");
     printf("\t3.Do not sit on machines between sets\n");
