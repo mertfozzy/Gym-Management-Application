@@ -3,6 +3,7 @@
 
 Mid-Sized C Project : Gym Management Software. It can create new members, and manage them.
 
+Login Info | username : "Mert" & password : "1234" 
 The program requires administrator login for the management panel. Also it includes sign-up option.
 
 It can create file "Memberlist.txt" according to user. You can see an example file in this repo.
