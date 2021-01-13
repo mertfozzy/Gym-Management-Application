@@ -1,6 +1,6 @@
 /*
 Beykoz University - Computer Enginerring
-Name: Mert Altuntaş
+Name: Mert Altuntas
 ID : 1804010005
 For Login System;
 username = "Mert"
@@ -206,9 +206,183 @@ void signupFunction() {
 //--------------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------------------------------------------
-void schedule ()
+void workout ()
 {
-	
+	    int c,u;
+	system ("cls");
+    printf("\n\n\n\n");
+    printf("\t ******  BE THE BEAST AND WORK HARD   *******\n\n\n");
+    printf("\t ******  ALWAYS HEALTH COMES FIRST   *******\n\n\n");
+    printf("\t ******  PRESS ANY KEY TO SELECT THE WORK OUT  *******\n\n\n");
+    getch();
+    system("cls");
+
+    z:
+    printf("\n\n\n\n\n\n");
+    printf("\tPRE-WORKOUT EXERCISE ARE COMPLUSORY\n\n\n");
+    printf("\t1 : CHEST WORKOUT\n\n");
+    printf("\t2 : BACK WORKOUT\n\n");
+    printf("\t3 : BICEPS WORKOUT\n\n");
+    printf("\t4 : TRICEPS WORKOUT\n\n");
+    printf("\t5 : ABS WORKOUT\n\n");
+    printf("\t6 : SHOULDER WORKOUT\n\n");
+    printf("\t7 : LEGS\n\n");
+    printf("\t8 : BACK TO MAIN MENU\n\n");
+    printf("\t");
+    scanf("%d",&c);
+    system("cls");
+    switch(c)
+    {
+    case 1 :
+        printf("\n");
+        printf("\t PUSH UP:                 3 SETS;       15,12,10 REPS\n\n");
+        printf("\t INCLINED BENCH-PRESS:    3 SETS;       15,12,10 REPS\n\n");
+        printf("\t FLAT BENCH-PRESS:        3 SETS;       15,12,10 REPS\n\n");
+        printf("\t DECLINED BENCH-PRESS:    3 SETS;       15,12,10 REPS\n\n");
+        printf("\t INCLIDE DUMBBELL-PRESS:  3 SETS;       15,12,10 REPS\n\n");
+        printf("\t FLAT DUMBELL-PRESS:      3 SETS;       15,12,10 REPS\n\n");
+        printf("\t DECLINED DUMBELL-PRESS:  3 SETS;       15,12,10 REPS\n\n");
+        printf("\t CABLE CROSS:             3 SETS;       15,12,10 REPS\n\n");
+        printf("\t SEATED MACHINE FLY:      3 SETS;       15,12,10 REPS\n\n");
+        printf("\t PLEASE DONT LIFT OVER-WEIGHT\n\n\n\n\n");
+        printf("\t TO RETURN TO WORKOUT LIST PLEASE PRESS '2' ");
+        scanf("%d",&u);
+        if(u==2)
+        {
+            system("cls");
+            goto z;
+        }
+        else
+            break;
+
+    case 2 :
+        printf("\n");
+        printf("\t WIDE GRIP PULL-UP:       3 SETS;        15,12,10 REPS\n\n");
+        printf("\t LAT PULL DOWN BACK:      3 SETS;        15,12,10 REPS\n\n");
+        printf("\t T-BAR:                   3 SETS;        15,12,10 REPS\n\n");
+        printf("\t SEATED RAW:              3 SETS;        15,12,10 REPS\n\n");
+        printf("\t PULL DOWN ROW:           3 SETS;        15,12,10 REPS\n\n");
+        printf("\t ONR ARM DUMBBELL ROWS:   3 SETS;        15,12,10 REPS\n\n");
+        printf("\t BARBELL BENT OVER:       3 SETS;        15,12,10 REPS\n\n");
+        printf("\t DEAD LIFT:               3 SETS;        15,12,10 REPS\n\n");
+        printf("\t PLEASE DONT LIFT OVER-WEIGHT\n\n\n");
+        printf("\t TO RETURN TO WORKOUT LIST PLEASE PRESS '2' ");
+        scanf("%d",&u);
+        if(u==2){
+            system("cls");
+            goto z;
+        }
+        else
+            break;
+
+
+    case 3:
+        printf("\n");
+        printf("\t SMALL GRIP PULL-UP:       3 SETS;        15,12,10 REPS\n\n");
+        printf("\t PREACHER CURLS:           3 SETS;        15,12,10 REPS\n\n");
+        printf("\t BARBELL CURLS:            3 SETS;        15,12,10 REPS\n\n");
+        printf("\t ONE BY ONE DUMBELL CURL:  3 SETS;        15,12,10 REPS\n\n");
+        printf("\t CONCENTRATION CURLS:      3 SETS;        15,12,10 REPS\n\n");
+        printf("\t CABLE BICEPS CURLS:       3 SETS;        15,12,10 REPS\n\n");
+        printf("\t INCLINED DUMBELL CURLS:   3 SETS;        15,12,10 REPS\n\n");
+        printf("\t REVERSE CURLS:            3 SETS;        15,12,10 REPS\n\n");
+        printf("\t HAMMER CURLS:             3 SETS;        15,12,10 REPS\n\n");
+        printf("\t PLEASE DONT LIFT OVER-WEIGHT\n\n\n\n");
+        printf("\t TO RETURN TO WORKOUT LIST PLEASE PRESS '2' ");
+        scanf("%d",&u);
+        if(u==2){
+            system("cls");
+            goto z;
+        }
+        else
+            break;
+
+
+    case 4 :
+        printf("\n");
+        printf("\t DIAMOND PUSH-UP:               3 SETS;     15,12,10 REPS\n\n");
+        printf("\t FLAT BAR TRICEPS EXTENSION:    3 SETS;     15,12,10 REPS\n\n");
+        printf("\t BAR TRICEPS EXTENSION:         3 SETS;     15,12,10 REPS\n\n");
+        printf("\t ONE ARM DUMBELL PRESS:         3 SETS;     15,12,10 REPS\n\n");
+        printf("\t BOTH ARM DUMBELL PRESS:        3 SETS;     15,12,10 REPS\n\n");
+        printf("\t KICKBACK:                      3 SETS;     15,12,10 REPS\n\n");
+        printf("\t CABLE PUSH DOWN:               3 SETS;     15,12,10 REPS\n\n");
+        printf("\t CABLE PUSH OVERHEAD:           3 SETS;     15,12,10 REPS\n\n");
+        printf("\t TRICEPS DIPS:                  3 SETS;     15,12,10 REPS\n\n");
+        printf("\t PLEASE DONT LIFT OVER-WEIGHT\n\n\n");
+        printf("\t TO RETURN TO WORKOUT LIST PLEASE PRESS '2' ");
+        scanf("%d",&u);
+        if(u==2){
+            system("cls");
+            goto z;
+        }
+        else
+            break;
+
+
+    case 5:
+        printf("\n");
+        printf("\t HANGING LEG RAISE:                             3 SETS;     15,12,10 REPS\n\n");
+        printf("\t MACHINE CRUNCH:                                3 SETS;     15,12,10 REPS\n\n");
+        printf("\t CABLE PALLOF PRESS:                            3 SETS;     15,12,10 REPS\n\n");
+        printf("\t KNEELING CABLE CRUNCH:                         3 SETS;     15,12,10 REPS\n\n");
+        printf("\t DECLINE-BENCH CRUNCH WITH MEDICINE BALL:       3 SETS;     15,12,10 REPS\n\n");
+        printf("\t EXERCISE BALL PIKE:                            3 SETS;     15,12,10 REPS\n\n");
+        printf("\t PLANK:                                                     7,5,3 MINUTES\n\n");
+        printf("\t PLEASE DONT LIFT OVER-WEIGHT\n\n\n");
+        printf("\t TO RETURN TO WORKOUT LIST PLEASE PRESS '2' ");
+        scanf("%d",&u);
+        if(u==2){
+            system("cls");
+            goto z;
+        }
+        else
+            break;
+
+    case 6 :
+        printf("\n");
+        printf("\t BAREBELL FRONT PRESS:           3 SETS;     15,12,10 REPS\n\n");
+        printf("\t DUMBELL PRESS:                  3 SETS;     15,12,10 REPS\n\n");
+        printf("\t LATERAL RAISES:                 3 SETS;     15,12,10 REPS\n\n");
+        printf("\t FRONT PRESS:                    3 SETS;     15,12,10 REPS\n\n");
+        printf("\t DUMBELL BENT OVER:              3 SETS;     15,12,10 REPS\n\n");
+        printf("\t UPRIGHT ROW:                    3 SETS;     15,12,10 REPS\n\n");
+        printf("\t SHRUG:                          3 SETS;     15,12,10 REPS\n\n");
+        printf("\t PLEASE DONT LIFT OVER-WEIGHT\n\n");
+        printf("\t TO RETURN TO WORKOUT LIST PLEASE PRESS '2' ");
+        scanf("%d",&u);
+        if(u==2){
+            system("cls");
+            goto z;
+        }
+        else
+            break;
+
+    case 7 :
+        printf("\n");
+        printf("\t SET-UPS:                      3 SETS;      15,12,10 REPS\n\n");
+        printf("\t SUMO DUMBELL SQUATS:          3 SETS;      15,12,10 REPS\n\n");
+        printf("\t LUNGES DUMBELLS:              3 SETS;      15,12,10 REPS\n\n");
+        printf("\t SEATED LEGS CRULS:            3 SETS;      15,12,10 REPS\n\n");
+        printf("\t SEATED MACHINE EXTENSIONS:    3 SETS;      15,12,10 REPS\n\n");
+        printf("\t STANDING DUMBELL CALF:        3 SETS;      15,12,10 REPS\n\n");
+        printf("\t REVERSE LEGS CRULS:           3 SETS;      15,12,10 REPS\n\n");
+        printf("\t HEAVY LEG PRESS:              3 SETS;      15,12,10 REPS\n\n");
+        printf("\t PLEASE DONT LIFT OVER-WEIGHT\n\n");
+        printf("\t TO RETURN TO WORKOUT LIST PLEASE PRESS '2' ");
+        scanf("%d",&u);
+        if(u==2){
+            system("cls");
+            goto z;
+        }
+        else
+            break;
+
+    case 8 :
+        main();
+        break;
+
+    }
 }
 //--------------------------------------------------------------------------------------------------------------------------
 void bill_management ()
@@ -289,7 +463,7 @@ int main ()
                 printf("\n\n\t\tWELCOME TO GYM MANAGEMENT SOFTWARE");
                 printf("\n\n\t1. CREATE A NEW MEMBER");
                 printf("\n\t2. MEMBER MANAGEMENT (requires admin login)");
-                printf("\n\t3. VIEW PERSONAL SCHEDULE BY MEMBER NAME");
+                printf("\n\t3. WORKOUT PROGRAM SUGGESTION");
                 printf("\n\t4. CHECK THE BILLS BY MEMBER NAME");
                 printf("\n\t5. REVIEW PAYMENT METHODS & DISCOUNTS");
                 printf("\n\t6. MAKE A BMI CALCULATION");
@@ -307,7 +481,7 @@ int main ()
 	case 2 : member_management();
 	break;
 	
-	case 3 : schedule ();
+	case 3 : workout ();
 	break;	
 	
 	case 4 : bill_management ();
