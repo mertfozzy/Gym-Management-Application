@@ -185,7 +185,7 @@ void loginFunction(char username[200], char password[200]) {
       FILE * fp;
       dosya = fopen("Memberlist.txt", "r");
       fp = fopen("NewMemberlist.txt", "w");
-      printf("\nEnter the name of member: \n");
+      printf("\nEnter the name of member to delete: \n");
       getchar();
       gets(mem);
 
@@ -198,7 +198,7 @@ void loginFunction(char username[200], char password[200]) {
           printf("\nDetails of the deleted member is:\n");
           printf("Name : %s\nSurname : %s\nBranch : %s\n", isimler, soyisimler, branchs);
         } else {
-          printf("\nPlease enter the correct details\n");
+          printf("\nPlease enter the correct details.\n");
         }
 
       }
@@ -214,6 +214,7 @@ void loginFunction(char username[200], char password[200]) {
       fclose(fp);
       fclose(dosya);
     }
+    printf ("\n\nPress any key to return the main menu..\n");
     getch();
     system("cls");
     main();
