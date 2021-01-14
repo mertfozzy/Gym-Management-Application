@@ -15,6 +15,8 @@ password = "1234"
 
 #include <string.h>
 
+#include <windows.h>
+
 
 //--------------------------------------------------------INTRO------------------------------------------------------------------
 void intro_ekrani() {
@@ -481,6 +483,7 @@ void bmi_calculation() {
 
 //--------------------------------------------------------MAIN-------------------------------------------------------------------
 int main() {
+  system("COLOR 1F");
   intro_ekrani();
   struct node * p = NULL;
   FILE * fp = fopen("mother.txt", "r"); //stores all names of files (tasks)
