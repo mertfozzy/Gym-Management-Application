@@ -12,4 +12,4 @@ That program developed on DevC++ IDE.
 
 Program contains features like bmi calculation, file recording etc.
 
-Program can be a bit mistaken. I try to fix bugs daily.
+All the codes are created by me. That's not a quote.
