@@ -1,5 +1,5 @@
 # Gym-Management-Software
-![photo](https://github.com/mertfozzy/Gym-Management-Software/blob/main/ScreenShot.jpg?raw=true)
+![photo](https://github.com/mertfozzy/Gym-Management-Software/blob/main/screenshot.png?raw=true)
 
 Mid-Sized C Project : Gym Management Software. It can create new members, and manage them.
 
