@@ -486,8 +486,7 @@ void bmi_calculation() {
 int main() {
   system("COLOR 1F");
   intro_ekrani();
-  struct node * p = NULL;
-  FILE * fp = fopen("mother.txt", "r"); //stores all names of files (tasks)
+ 
 
   int rakam;
   printf("\n=============================================================\n");
